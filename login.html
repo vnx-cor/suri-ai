@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Suri.AI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <div class="nav-left">
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT US</a>
+        <a href="news.html">NEWS</a>
+      </div>
+      <div class="nav-logo">
+        <a href="index.html" class="logo-pill">SURI.AI</a>
+      </div>
+      <div class="nav-right">
+        <a href="resources.html">COURSE</a>
+        <a href="summarizer.html">SUMMARIZER</a>
+        <a href="signup.html">REGISTER</a>
+        <a href="login.html">SIGN IN</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Sign In</h2>
+      <p>Welcome back! Please enter your details.</p>
+
+      <form id="loginForm" class="login-form">
+        <div class="input-group">
+          <label for="loginUsername">Username or Email *</label>
+          <input id="loginUsername" type="text" required placeholder="Enter your email" />
+        </div>
+
+        <div class="input-group">
+          <label for="loginPassword">Password *</label>
+          <input id="loginPassword" type="password" required placeholder="••••••••" />
+        </div>
+
+        <button type="submit" class="btn-submit">Sign In</button>
+        <div id="loginStatus" class="status"></div>
+      </form>
+
+      <div class="card-footer">
+        <p><a href="signup.html">Don't have an account? Register here.</a></p>
+        <p><a href="#">Forgot your password?</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Powered by Suri.AI</p>
+  </footer>
+</body>
+</html>

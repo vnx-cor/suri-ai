@@ -1,0 +1,392 @@
+/* --- Global Reset & Core --- */
+* { box-sizing: border-box; }
+
+body { 
+    margin: 0; 
+    font-family: 'Inter', -apple-system, sans-serif; 
+    background-color: #0a0a0a;
+    /* Unified Background: Blue glow + stars + faint grid */
+    background-image: 
+        radial-gradient(circle at bottom, #102a7a 0%, transparent 40%),
+        radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 150px 150px, #ddd, rgba(0,0,0,0)),
+        linear-gradient(to right, rgba(26, 26, 26, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(26, 26, 26, 0.5) 1px, transparent 1px);
+    background-size: 100% 100%, 200px 200px, 200px 200px, 40px 40px, 40px 40px;
+    color: #ffffff; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar { display: none; }
+
+/* --- Header & Navigation --- */
+.site-header { padding: 1.5rem 1rem; width: 100%; }
+.site-header nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.nav-left, .nav-right { display: flex; gap: 2rem; flex: 1; }
+.nav-right { justify-content: flex-end; }
+
+/* The Pill-style logo from the second image */
+.nav-logo a, .logo-pill {
+    background: #e0e0e0;
+    color: #000 !important;
+    padding: 6px 24px;
+    border-radius: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.site-header a { 
+    color: #888; 
+    text-decoration: none; 
+    font-size: 0.7rem; 
+    font-weight: 600; 
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.site-header a:hover { color: #fff; }
+
+/* --- Hero Section (Homepage) --- */
+.hero-section {
+    text-align: center;
+    padding: 6rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.hero-section p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.btn-suri {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: white;
+    padding: 0.8rem 4rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-suri:hover {
+    background: white;
+    color: black;
+}
+
+/* --- Search Interface (Summarizer) --- */
+.main-interface {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.main-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: #e5e5e5;
+    text-align: center;
+}
+
+.search-container { width: 100%; max-width: 700px; }
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 8px 20px;
+}
+
+#inputText {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    outline: none;
+}
+
+/* --- Auth Card (Login/Register) --- */
+.card { 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(15px);
+    padding: 2.5rem; 
+    margin: 4rem auto; 
+    border-radius: 24px; 
+    width: min(450px, 95%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-group { display: grid; margin-bottom: 1.2rem; }
+.input-group label { font-size: 0.75rem; margin-bottom: 0.5rem; color: #9ca3af; text-transform: uppercase; }
+.input-group input { 
+    background: rgba(0,0,0,0.3); border: 1px solid #333; color: white; 
+    padding: 0.8rem; border-radius: 10px; 
+}
+
+.btn-submit { 
+    width: 100%; background: #0f62ff; border: none; color: white; 
+    padding: 0.9rem; border-radius: 10px; font-weight: 700; cursor: pointer; 
+}
+
+/* --- Footer --- */
+.site-footer { padding: 2rem; text-align: center; color: #4b5563; font-size: 0.8rem; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .site-header nav { flex-direction: column; gap: 1.2rem; }
+    .nav-left, .nav-right { justify-content: center; gap: 1rem; width: 100%; }
+    .hero-section h1 { font-size: 2rem; }
+}
+
+/* --- Search Bar Icons Styling --- */
+.search-actions {
+    display: flex;
+    gap: 15px; /* Increased gap to match the image spacing */
+    align-items: center;
+    padding-right: 5px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: #888; /* Dimmed color as seen in the image */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.icon-btn:hover {
+    color: #ffffff; /* Icons light up on hover */
+}
+
+/* Ensure the SVGs within the buttons match the thin profile in the image */
+.icon-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5; /* Makes the icons look cleaner and thinner */
+}
+
+.search-icon-plus {
+    color: #888;
+    font-size: 1.4rem;
+    margin-right: 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: 300; /* Keeps the '+' sign thin */
+    transition: color 0.2s;
+}
+
+.search-icon-plus:hover {
+    color: #fff;
+}
+
+/* --- Markdown Output Styling --- */
+.summary-output {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.md-paragraph {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: #e5e5e5;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.md-section {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.md-section:first-child {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+}
+
+.md-label {
+    color: #60a5fa;
+    font-weight: 700;
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Validity section styling */
+.md-section.validity-real .md-paragraph,
+.md-section.validity-dubious .md-paragraph,
+.md-section.validity-fake .md-paragraph {
+    text-align: center;
+    font-weight: 600;
+}
+
+.md-section.validity-real .md-paragraph {
+    color: #10b981;
+}
+
+.md-section.validity-dubious .md-paragraph {
+    color: #f97316;
+}
+
+.md-section.validity-fake .md-paragraph {
+    color: #ef4444;
+}
+
+.md-header {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0.75rem 0;
+}
+
+code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #ffa500;
+}
+
+strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+em {
+    font-style: italic;
+    color: #b4b4b4;
+}
+
+.md-link {
+    color: #60a5fa;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.md-link:hover {
+    border-bottom-color: #60a5fa;
+}
+
+.search-status {
+    margin-top: 1rem;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    min-height: 20px;
+}
+
+/* --- News Page Layout --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.05); /* Matches card style */
+    backdrop-filter: blur(15px); /* Matches login card blur */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.news-img-wrapper {
+    width: 100%;
+    height: 190px;
+}
+
+.news-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-date {
+    color: #60a5fa; /* Uses your primary accent color */
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.news-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.news-card h3 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.news-card p {
+    font-size: 0.85rem;
+    color: #9ca3af; /* Matches hero paragraph color */
+    line-height: 1.5;
+    margin: 0;
+}

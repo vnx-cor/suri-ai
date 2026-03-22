@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Suri.AI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <div class="nav-left">
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT US</a>
+        <a href="news.html">NEWS</a>
+      </div>
+      <div class="nav-logo">
+        <a href="index.html" class="logo-pill">SURI.AI</a>
+      </div>
+      <div class="nav-right">
+        <a href="resources.html">COURSE</a>
+        <a href="summarizer.html">SUMMARIZER</a>
+        <a href="signup.html">REGISTER</a>
+        <a href="login.html">SIGN IN</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Create Account</h2>
+      <p>Join Suri.AI to start verifying news today.</p>
+
+      <form id="registerForm" class="login-form">
+        <div class="input-group">
+          <label for="regFullname">Full Name *</label>
+          <input id="regFullname" type="text" required placeholder="John Doe" />
+        </div>
+
+        <div class="input-group">
+          <label for="regEmail">Email Address *</label>
+          <input id="regEmail" type="email" required placeholder="name@example.com" />
+        </div>
+
+        <div class="input-group">
+          <label for="regPassword">Password *</label>
+          <input id="regPassword" type="password" required placeholder="Create a password" />
+        </div>
+
+        <button type="submit" class="btn-submit">Register</button>
+        <div id="registerStatus" class="status"></div>
+      </form>
+
+      <div class="card-footer">
+        <p><a href="login.html">Already have an account? Sign in.</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Powered by Suri.AI</p>
+  </footer>
+</body>
+</html>
